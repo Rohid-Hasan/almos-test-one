@@ -1,0 +1,120 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$my-primary-pattlete: (
+  50: #e4f3f5,
+  100: #bce0e6,
+  200: #90ccd5,
+  300: #63b7c4,
+  400: #41a7b8,
+  500: #2098ab,
+  600: #1c90a4,
+  700: #18859a,
+  800: #137b91,
+  900: #0b6a80,
+  A100: #b1eeff,
+  A200: #7ee3ff,
+  A400: #4bd8ff,
+  A700: #31d2ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+// define a real custom palette (using http://mcg.mbitson.com)
+
+$my-accent-pattlete: (
+  50: #f3f8fc,
+  100: #e2eef8,
+  200: #cfe2f4,
+  300: #bcd6ef,
+  400: #adceeb,
+  500: #9fc5e8,
+  600: #97bfe5,
+  700: #8db8e2,
+  800: #83b0de,
+  900: #72a3d8,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #eef6ff,
+  A700: #d4e9ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$my-warn-pattlete: (
+  50: #fff2f0,
+  100: #ffdedb,
+  200: #ffc8c3,
+  300: #ffb1aa,
+  400: #ffa198,
+  500: #ff9086,
+  600: #ff887e,
+  700: #ff7d73,
+  800: #ff7369,
+  900: #ff6156,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #fffbfb,
+  A700: #ffe3e1,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$my-primary: mat.define-palette($my-primary-pattlete);
+$my-accent: mat.define-palette($my-accent-pattlete);
+$my-warn: mat.define-palette($my-warn-pattlete);
+
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+      warn: $my-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($my-theme);

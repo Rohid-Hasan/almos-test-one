@@ -1,0 +1,21 @@
+<div class="card m-2 p-3">
+  <img [src]="product.imageUrl" class="img-fluid card-img-top" alt="{{product.name}}">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <h3><strong>{{product.name}}</strong></h3>
+        <p class="text-muted">{{product.description}}</p>
+      </div>
+      <div class="col-6">
+        <p>${{product.price}}</p>
+        <div class="card">
+          <div class="d-flex">
+            <button mat-icon-button type="button" class="icon-button"><i class="bi bi-dash"></i></button>
+            <p class="mt-3"><strong>1</strong></p>
+            <button mat-icon-button type="button" class="icon-button"><i class="bi bi-plus"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

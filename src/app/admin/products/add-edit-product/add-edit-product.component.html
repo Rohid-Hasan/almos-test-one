@@ -1,0 +1,46 @@
+<div class="p-5">
+  <form [formGroup]="addEditForm" (submit)="onSubmit()">
+    <!-- name -->
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput placeholder="Ex. Xiaomi Redmi Note 10s Mobile" formControlName="name">
+      <mat-error>Name is required</mat-error>
+    </mat-form-field>
+
+    <!-- imageUrl -->
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Image Url</mat-label>
+      <input type="text" matInput placeholder="Ex. Enter URL Here" formControlName="imageUrl">
+      <mat-error>Image Url is required</mat-error>
+    </mat-form-field>
+
+    <div class="d-flex justify-content-between">
+      <!-- price -->
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input type="number" matInput placeholder="Ex. 100" formControlName="price">
+        <mat-error>Price is required</mat-error>
+      </mat-form-field>
+
+      <!-- brand Name -->
+      <mat-form-field appearance="outline">
+        <mat-label>Brand Name</mat-label>
+        <input type="text" matInput placeholder="Ex. Xiaomi Redmi Note 10s Mobile" formControlName="brandName">
+        <mat-error>Brand name is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- description -->
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Description</mat-label>
+      <textarea rows="8" matInput placeholder="Ex. Product Description" formControlName="description"></textarea>
+      <mat-error>Descripton is required</mat-error>
+    </mat-form-field>
+
+    <div class="d-flex justify-content-between">
+      <button mat-flat-button color="warn" [mat-dialog-close] type="button">Cancel</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="addEditForm.invalid">Submit</button>
+    </div>
+
+  </form>
+</div>

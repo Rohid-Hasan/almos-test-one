@@ -1,0 +1,23 @@
+<div class="container my-5">
+  <button mat-raised-button color="primary" (click)="addEditPopup()" type="button">Add New Product</button>
+  <h1 class="text-muted text-center" *ngIf="!products">
+    <strong>No Products Found ... Please Add one first</strong>
+  </h1>
+  <div class="products mt-3" *ngIf="products?.length > 0">
+    <div class="d-flex justify-content-between" *ngFor="let product of products;let i=index">
+      <div class="col-11">
+        <div class="d-flex align-items-center justify-content-start">
+          <img [src]="product.imageUrl" alt="{{product.name}}" class="img-fluid">
+          <h3><strong>{{product.name}}</strong></h3>
+        </div>
+      </div>
+      <div class="col-1">
+        <button mat-icon-button color="primary" class="icon-button" (click)="addEditPopup(product,i)" type="button"><i
+            class="bi bi-pen"></i></button>
+
+        <button mat-icon-button color="warn" class="icon-button" (click)="deleteProduct(product.id,i)" type="button"><i
+            class="bi bi-trash"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
